@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\domin\OneDrive\RWSS\próbaArOp\WpfApplication4\obj\Debug\
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\
 WpfApplication4
 none
 false
 DEBUG;TRACE
-C:\Users\domin\OneDrive\RWSS\próbaArOp\WpfApplication4\App.xaml
-41326416915
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\App.xaml
+9-587704786
 
-16-1104448183
-16-88636523
-MainWindow.xaml;Pages\AddBookPage.xaml;Pages\LoginPage.xaml;Pages\MainView.xaml;
+23789492679
+162029487953
+MainWindow.xaml;Pages\AddBookPage.xaml;Pages\AddReaderPage.xaml;Pages\LoginPage.xaml;Pages\MainView.xaml;Pages\SearchBillPage.xaml;Pages\TakeBookPage.xaml;Pages\SearchTransactionPage.xaml;Pages\SearchReaderPage.xaml;
 
-True
+False
 

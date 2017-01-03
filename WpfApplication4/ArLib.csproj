@@ -76,11 +76,17 @@
     <Compile Include="Classes\ArLibCon.cs" />
     <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\Reader.cs" />
+    <Compile Include="Classes\StaticTransaction.cs" />
+    <Compile Include="Classes\Transaction.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AddBookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddReaderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,16 +98,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\SearchBillPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TakeBookPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SearchTransactionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SearchReaderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AddBookPage.xaml.cs">
       <DependentUpon>AddBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddReaderPage.xaml.cs">
+      <DependentUpon>AddReaderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchBillPage.xaml.cs">
+      <DependentUpon>SearchBillPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TakeBookPage.xaml.cs">
+      <DependentUpon>TakeBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchTransactionPage.xaml.cs">
+      <DependentUpon>SearchTransactionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchReaderPage.xaml.cs">
+      <DependentUpon>SearchReaderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ArLib.Classes
 {
@@ -16,16 +9,17 @@ namespace ArLib.Classes
         public string tytuł { get; set; } 
         public string autor { get; set; }
         public string ISBN { get; set; }
-        public int liczbaStron { get; set; }
+        public string liczbaStron { get; set; }
         public string wydawnictwo { get; set; }
         public bool czyZagubiona { get; set; }
         public string seria { get; set; }
+        public bool czyWypożyczona { get; set; }
 
         internal Book()
         {
-            ID = this.GetHashCode();
+            ID = GetHashCode();
         }
-        public Book(string tytuł, string autor, string ISBN, int liczbaStron, string wydawnictwo, string seria)
+        public Book(string tytuł, string autor, string ISBN, string liczbaStron, string wydawnictwo, string seria)
         {
             this.tytuł = tytuł;
             this.autor = autor;
@@ -34,7 +28,7 @@ namespace ArLib.Classes
             this.wydawnictwo = wydawnictwo;
             czyZagubiona = false;
             this.seria = seria;
-            ID = this.GetHashCode();
+            ID = GetHashCode();
         }
     }
 }

@@ -10,8 +10,6 @@ namespace ArLib.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
-        Administrator admin = new Administrator();
-
         public LoginPage()
         {
             InitializeComponent();
@@ -19,8 +17,8 @@ namespace ArLib.Pages
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (login_tb.Text == admin.login && password_tb.Password == admin.hasło)
-                this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+            if (login_tb.Text == Administrator.login && password_tb.Password == Administrator.hasło)
+                NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
             else
                 tmp_label.Content = "Podano błędny login i/lub hasło!";
         }

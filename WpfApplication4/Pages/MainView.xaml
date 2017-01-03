@@ -9,21 +9,36 @@
       Title="ArLib 1.0">
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="33*"/>
             <RowDefinition Height="536*"/>
         </Grid.RowDefinitions>
-        <Menu IsMainMenu="True" FontSize="25" Height="50" Margin="0,0,0,519" HorizontalAlignment="Center" Width="792" VerticalAlignment="Center" Background="{x:Null}" Foreground="White" Grid.RowSpan="2">
-            <MenuItem Header="Wyszukaj..." FontFamily="DejaVu Serif Condensed" FontSize="30" Margin="0,0,50,0"/>
-            <MenuItem Header="Książki" FontFamily="DejaVu Serif Condensed" FontSize="30" Margin="0,0,15,0" Foreground="White" >
-                <MenuItem Header="Dodaj Książkę" FontFamily="DejaVu Serif Condensed" FontSize="25" Click="AddBook_Click" Foreground="Black"/>
+        <Menu IsMainMenu="True" FontSize="25" Height="50" Margin="0,0,0,519" Width="792" VerticalAlignment="Center" Background="{x:Null}" Foreground="White" Grid.RowSpan="2">
+            <MenuItem Header="Przeglądaj..." FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,50,0" Foreground="White">
+                <MenuItem Header="Czytelników" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchReader_Click" Foreground="Black"/>
+                <MenuItem Header="Wypożyczenia" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchTransaction_Click" Foreground="Black"/>
+                <MenuItem Header="Mandaty" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchBill_Click" Foreground="Black"/>
             </MenuItem>
-            <MenuItem Header="Czytelnicy" FontFamily="DejaVu Serif Condensed" FontSize="30" Margin="0,0,15,0" />
-            <MenuItem Header="Kary" FontFamily="DejaVu Serif Condensed" FontSize="30" Margin="0,0,15,0"/>
-            <MenuItem Header="About" FontFamily="DejaVu Serif Condensed" FontSize="30" Padding="11,0,6,0" Margin="70,0,0,0" />
+            <MenuItem Header="Książki" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,15,0" Foreground="White">
+                <MenuItem Header="Dodaj Książkę" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="AddBook_Click" Foreground="Black"/>
+            </MenuItem>
+            <MenuItem Header="Czytelnicy" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,15,0" Foreground="White" >
+                <MenuItem Header="Dodaj Czytelnika" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="AddReader_Click" Foreground="Black"/>
+            </MenuItem>
+            <MenuItem Header="Kary" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,0,0"/>
         </Menu>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="88,71,0,0" Grid.Row="1" VerticalAlignment="Top" Height="295" Width="628" IsReadOnly="True"/>
+        <Menu VerticalAlignment="Bottom" Margin="0,0,0,37" Grid.Row="1" Background="{x:Null}">
+            <MenuItem Header="Zmień dane" FontFamily="DejaVu Serif Condensed" FontSize="20" Margin="0,0,50,0" Foreground="White" Click="edit_Click"/>
+            <MenuItem Header="Zmień hasło" FontFamily="DejaVu Serif Condensed" FontSize="20" Margin="0,0,50,0" Foreground="White" Click="edit_password_Click"/>
+            <MenuItem Header="Wyloguj" FontFamily="DejaVu Serif Condensed" FontSize="20" Foreground="White" Click="logout_Click" Width="89" Padding="0,0,6,0"/>
+            <MenuItem Header="O programie" FontFamily="DejaVu Serif Condensed" FontSize="20" Foreground="White" Click="about_Click" Width="130" Padding="0,0,6,0" Margin="200,0,0,0"/>
+        </Menu>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Right" Margin="0,146,43,0" Grid.Row="1" VerticalAlignment="Top" Height="214" Width="698" IsReadOnly="True"/>
+        <TextBox x:Name="quicksearch_tb" HorizontalAlignment="Right" Height="36" Margin="0,105,159,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="582" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <Button x:Name="quicksearch_button" Content="Wyszukaj" HorizontalAlignment="Left" Margin="646,105,0,0" Grid.Row="1" VerticalAlignment="Top" Width="111" Height="36" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="QuickSearch_Click"/>
+        <Button x:Name="editBook_button" Content="Edytuj" HorizontalAlignment="Left" Margin="78,365,0,0" Grid.Row="1" VerticalAlignment="Top" Width="163" Height="30"/>
+        <Button x:Name="deleteBook_button" Content="Usuń" HorizontalAlignment="Left" Margin="320,365,0,0" Grid.Row="1" VerticalAlignment="Top" Width="160" Height="30"/>
+        <Button x:Name="takeBook_button" Content="Wypożycz" HorizontalAlignment="Left" Margin="559,365,0,0" Grid.Row="1" VerticalAlignment="Top" Width="163" Click="TakeBook_Click" Height="30"/>
         <Grid.Background>
             <ImageBrush ImageSource="/WpfApplication4;component/Additional/background.png"/>
         </Grid.Background>
