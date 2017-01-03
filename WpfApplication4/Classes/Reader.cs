@@ -15,12 +15,11 @@ namespace ArLib.Classes
         public string nazwisko { get; set; }
         public string adres { get; set; }
         public string nrTelefonu { get; set; }
-        public int limitWypożyczeń { get; set; }
+        public int limitWypożyczeń { get; set; } = 3;
 
         internal Reader()
         {
             ID = this.GetHashCode();
-            limitWypożyczeń = 3;
         }
         public Reader(string imię, string nazwisko, string adres, string nrTelefonu)
         {
@@ -28,7 +27,6 @@ namespace ArLib.Classes
             this.nazwisko = nazwisko;
             this.adres = adres;
             this.nrTelefonu = nrTelefonu;
-            limitWypożyczeń = 3;
         }
     }
 }

@@ -5,15 +5,15 @@ namespace ArLib.Classes
     public class Book
     {
         [Key]
-        public int ID { get; set; }
+        public int ID { get; set; } 
         public string tytuł { get; set; } 
         public string autor { get; set; }
         public string ISBN { get; set; }
         public string liczbaStron { get; set; }
         public string wydawnictwo { get; set; }
-        public bool czyZagubiona { get; set; }
+        public bool czyZagubiona { get; set; } = false;
         public string seria { get; set; }
-        public bool czyWypożyczona { get; set; }
+        public bool czyWypożyczona { get; set; } = false;
 
         internal Book()
         {
@@ -26,7 +26,6 @@ namespace ArLib.Classes
             this.ISBN = ISBN;
             this.liczbaStron = liczbaStron;
             this.wydawnictwo = wydawnictwo;
-            czyZagubiona = false;
             this.seria = seria;
             ID = GetHashCode();
         }

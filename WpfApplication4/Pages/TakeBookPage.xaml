@@ -12,12 +12,13 @@
             <ImageBrush ImageSource="/WpfApplication4;component/Additional/background.png"/>
         </Grid.Background>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="505" FontSize="36" FontFamily="DejaVu Serif" TextAlignment="Center" TextDecorations="{x:Null}" Foreground="White"><Run Text="ArLib 1.0 - "/><Run FontSize="25" Text="Wybierz czytelnika..."/><LineBreak/><LineBreak/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="search_textBox" HorizontalAlignment="Left" Height="54" Margin="61,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
-        <Button x:Name="search_button" Content="Wyszukaj..." HorizontalAlignment="Left" Height="54" Margin="627,142,0,0" VerticalAlignment="Top" Width="116" Click="SearchButton_Click" IsDefault="True"/>
-        <DataGrid x:Name="results_readers" HorizontalAlignment="Left" Margin="61,224,0,0" VerticalAlignment="Top" Height="128" Width="561"/>
-        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Left" Margin="61,399,0,0" VerticalAlignment="Top" Width="116" RenderTransformOrigin="-1.747,0.25" Height="44" Click="back_button_Click"/>
-        <Button x:Name="transaction_button" Content="Wypożycz" HorizontalAlignment="Left" Margin="627,308,0,0" VerticalAlignment="Top" Width="116" Height="44" Click="transaction_button_Click"/>
+        <Label x:Name="info_label" Content="Wybierz czytelnika, który wypożycza książkę:" HorizontalAlignment="Right" Margin="0,70,59,0" VerticalAlignment="Top" Width="682" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <TextBox x:Name="search_textBox" HorizontalAlignment="Right" Height="36" Margin="0,105,159,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="582" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <Button x:Name="search_button" Content="Wyszukaj" HorizontalAlignment="Right" Margin="0,105,43,0" Grid.Row="1" VerticalAlignment="Top" Width="111" Height="36" Click="SearchButton_Click" IsDefault="True"/>
+        <DataGrid x:Name="results_readers" HorizontalAlignment="Right" Margin="0,146,43,0" Grid.Row="1" VerticalAlignment="Top" Height="214" Width="698" IsReadOnly="True"/>
+
+        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Right" Margin="0,440,606,0" VerticalAlignment="Top" Width="135" Height="40" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="back_button_Click"/>
+        <Button x:Name="transaction_button" Content="Wypożycz" HorizontalAlignment="Right" Margin="0,365,43,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20"  Click="transaction_button_Click"/>
         <Label x:Name="tmp_label" HorizontalAlignment="Left" Height="152" Margin="204,399,0,0" VerticalAlignment="Top" Width="418" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="20px"/>
-        <Label x:Name="label" Content="Wybierz czytelnika, który wypożycza książkę:" HorizontalAlignment="Left" Margin="61,79,0,0" VerticalAlignment="Top" Width="682" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
     </Grid>
 </Page>

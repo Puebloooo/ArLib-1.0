@@ -27,7 +27,8 @@
         <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="65,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="195" Foreground="White" FontSize="30" FontFamily="DejaVu Serif Condensed"><Run Text="*"/><Run Text="Liczba stron"/></TextBlock>
         <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="44,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="216" Foreground="White" FontSize="30" FontFamily="DejaVu Serif Condensed"><Run Text="*"/><Run Text="Wydawnictwo"/></TextBlock>
         <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="160,380,0,0" TextWrapping="Wrap" Text="Seria" VerticalAlignment="Top" Height="41" Width="100" Foreground="White" FontSize="30" FontFamily="DejaVu Serif Condensed"/>
-        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Left" Margin="44,440,0,0" VerticalAlignment="Top" Width="100" Height="40" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="back_button_Click"/>
+        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Right" Margin="0,440,606,0" VerticalAlignment="Top" Width="135" Height="40" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="back_button_Click"/>
+
         <Label x:Name="tmp_label" Content="" HorizontalAlignment="Left" Height="34" Margin="44,485,0,0" VerticalAlignment="Top" Width="610" FontFamily="DejaVu Serif Condensed" FontSize="25" HorizontalContentAlignment="Center" Foreground="White"/>
 
 

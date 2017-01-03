@@ -22,5 +22,10 @@ namespace ArLib.Pages
             else
                 tmp_label.Content = "Podano błędny login i/lub hasło!";
         }
+
+        private void restorePassword_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Page for password restoration
+        }
     }
 }

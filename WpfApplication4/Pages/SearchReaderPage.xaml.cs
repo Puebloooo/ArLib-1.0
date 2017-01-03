@@ -1,18 +1,9 @@
 ﻿using ArLib.Classes;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ArLib.Pages
 {
@@ -29,10 +20,6 @@ namespace ArLib.Pages
                 results_readers.ItemsSource = db.Readers.ToList();
             }
         }
-        private void back_button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
-        }
         private void QuickSearch_Click(object sender, RoutedEventArgs e)
         {
             using (var db = new ArLibCon())
@@ -45,6 +32,32 @@ namespace ArLib.Pages
 
                 results_readers.ItemsSource = query.ToList();
             }
+        }
+        private void deleteReader_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (results_readers.SelectedItem != null)
+                if (MessageBox.Show("Czy na pewno usunąć?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    using (var db = new ArLibCon())
+                    {
+                        Reader tmp = (Reader)results_readers.SelectedItem;
+
+                        var query = from reader in db.Readers
+                                    where reader.ID == tmp.ID
+                                    select reader;
+
+                        db.Readers.RemoveRange(query);
+                        db.SaveChanges();
+                        NavigationService.Refresh();
+                    }
+        }
+
+        private void editReader_button_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Edit Reader
+        }
+        private void back_button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

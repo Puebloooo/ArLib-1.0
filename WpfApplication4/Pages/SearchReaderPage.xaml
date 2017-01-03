@@ -12,9 +12,14 @@
             <ImageBrush ImageSource="/WpfApplication4;component/Additional/background.png"/>
         </Grid.Background>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="543" FontSize="36" FontFamily="DejaVu Serif" TextAlignment="Center" TextDecorations="{x:Null}" Foreground="White"><Run Text="ArLib 1.0 - "/><Run FontSize="25" Text="Przeglądaj czytelników"/><LineBreak/><LineBreak/><LineBreak/><Run/></TextBlock>
-        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Left" Margin="61,507,0,0" VerticalAlignment="Top" Width="116" RenderTransformOrigin="-1.747,0.25" Height="44" Click="back_button_Click"/>
-        <DataGrid x:Name="results_readers" HorizontalAlignment="Right" Margin="0,181,60,0" VerticalAlignment="Top" Height="214" Width="698" IsReadOnly="True"/>
-        <TextBox x:Name="quicksearch_tb" HorizontalAlignment="Right" Height="36" Margin="0,140,176,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="582" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
-        <Button x:Name="quicksearch_button" Content="Wyszukaj" HorizontalAlignment="Left" Margin="629,140,0,0" VerticalAlignment="Top" Width="111" Height="36" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="QuickSearch_Click"/>
+        <DataGrid x:Name="results_readers" HorizontalAlignment="Right" Margin="0,146,43,0" Grid.Row="1" VerticalAlignment="Top" Height="214" Width="698" IsReadOnly="True"/>
+
+        <TextBox x:Name="quicksearch_tb" HorizontalAlignment="Right" Height="36" Margin="0,105,159,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="582" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <Button x:Name="quicksearch_button" Content="Wyszukaj" HorizontalAlignment="Right" Margin="0,105,43,0" Grid.Row="1" VerticalAlignment="Top" Width="111" Height="36" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="QuickSearch_Click"/>
+
+        <Button x:Name="deleteReader_button" Content="Usuń" HorizontalAlignment="Right" Margin="0,365,43,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="deleteReader_button_Click"/>
+        <Button x:Name="editReader_button" Content="Edytuj" HorizontalAlignment="Right" Margin="0,365,228,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" RenderTransformOrigin="0.037,1.933" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="editReader_button_Click"/>
+        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Right" Margin="0,440,606,0" VerticalAlignment="Top" Width="135" Height="40" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="back_button_Click"/>
+
     </Grid>
 </Page>

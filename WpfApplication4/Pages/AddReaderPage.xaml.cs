@@ -39,7 +39,7 @@ namespace ArLib.Pages
                 tmp_label.Content = "Pomyślnie dodano! Wciśnij Powrót.";
             }
             else
-                tmp_label.Content = "Uzupełnij wszystkie pola!";
+                tmp_label.Content = "Uzupełnij wszystkie wymagane pola!";
         }
 
         private void back_button_Click(object sender, RoutedEventArgs e)

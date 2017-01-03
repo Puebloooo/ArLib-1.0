@@ -55,3 +55,5 @@ C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\TakeBookPage.baml
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\SearchTransactionPage.baml
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\SearchReaderPage.baml
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\AboutPage.g.cs
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\AboutPage.baml
