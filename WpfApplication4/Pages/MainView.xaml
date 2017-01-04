@@ -17,7 +17,7 @@
             <MenuItem Header="Przeglądaj..." FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,50,0" Foreground="White">
                 <MenuItem Header="Czytelników" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchReader_Click" Foreground="Black"/>
                 <MenuItem Header="Wypożyczenia" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchTransaction_Click" Foreground="Black"/>
-                <MenuItem Header="Mandaty" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchBill_Click" Foreground="Black"/>
+                <MenuItem Header="Mandaty" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchBill_Click" Foreground="Black" IsEnabled="False"/>
             </MenuItem>
             <MenuItem Header="Książki" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,50,0" Foreground="White">
                 <MenuItem Header="Dodaj Książkę" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="AddBook_Click" Foreground="Black"/>
@@ -25,7 +25,7 @@
             <MenuItem Header="Czytelnicy" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,50,0" Foreground="White" >
                 <MenuItem Header="Dodaj Czytelnika" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="AddReader_Click" Foreground="Black"/>
             </MenuItem>
-            <MenuItem Header="Kary" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,0,0"/>
+            <MenuItem Header="Kary" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,0,0" IsEnabled="False"/>
         </Menu>
         <Menu VerticalAlignment="Bottom" Margin="0,0,0,10" Grid.Row="1" Background="{x:Null}">
             <MenuItem Header="Zmień dane" FontFamily="DejaVu Serif Condensed" FontSize="20" Margin="0,0,50,0" Foreground="White" Click="edit_Click"/>
@@ -36,10 +36,10 @@
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Right" Margin="0,146,43,0" Grid.Row="1" VerticalAlignment="Top" Height="214" Width="698" IsReadOnly="True"/>
         <TextBox x:Name="quicksearch_tb" HorizontalAlignment="Right" Height="36" Margin="0,105,159,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="582" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
         <Button x:Name="quicksearch_button" Content="Wyszukaj" HorizontalAlignment="Right" Margin="0,105,43,0" Grid.Row="1" VerticalAlignment="Top" Width="111" Height="36" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="QuickSearch_Click"/>
-        <Button x:Name="editBook_button" Content="Edytuj" HorizontalAlignment="Right" Margin="0,365,606,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <Button x:Name="editBook_button" Content="Edytuj" HorizontalAlignment="Right" Margin="0,365,606,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="editBook_button_Click"/>
         <Button x:Name="deleteBook_button" Content="Usuń" HorizontalAlignment="Right" Margin="0,365,43,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="deleteBook_button_Click"/>
         <Button x:Name="takeBook_button" Content="Wypożycz" HorizontalAlignment="Right" Margin="0,365,421,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Click="TakeBook_Click" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
-        <Button x:Name="returnBook_button" Content="Zwróć" HorizontalAlignment="Right" Margin="0,365,228,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" RenderTransformOrigin="0.037,1.933" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <Button x:Name="returnBook_button" Content="Zwróć" HorizontalAlignment="Right" Margin="0,365,228,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" RenderTransformOrigin="0.037,1.933" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="returnBook_Click"/>
         <Grid.Background>
             <ImageBrush ImageSource="/WpfApplication4;component/Additional/background.png"/>
         </Grid.Background>

@@ -53,11 +53,15 @@ namespace ArLib.Pages
 
         private void editReader_button_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Edit Reader
+            if (results_readers.SelectedItem != null)
+            {
+                StaticTemp.selectedReader = (Reader)results_readers.SelectedItem;
+                NavigationService.Navigate(new Uri("/Pages/EditReaderPage.xaml", UriKind.RelativeOrAbsolute));
+            }
         }
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

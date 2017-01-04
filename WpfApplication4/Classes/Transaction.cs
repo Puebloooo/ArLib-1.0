@@ -11,6 +11,7 @@ namespace ArLib.Classes
         public int idCzytelnika { get; set; }
         public DateTime dataWypożyczenia { get; set; }
         public DateTime dataZwrotu { get; set; }
+        public bool czyZwrócona { get; set; }
 
         internal Transaction()
         {

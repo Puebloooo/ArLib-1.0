@@ -25,7 +25,7 @@ namespace ArLib.Pages
         }
         private void SearchTransaction_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Look through transactions
+            NavigationService.Navigate(new Uri("/Pages/SearchTransactionPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void SearchBill_Click(object sender, RoutedEventArgs e)
         {
@@ -50,13 +50,44 @@ namespace ArLib.Pages
                 dataGrid.ItemsSource = query.ToList();
             }
         }
+        private void editBook_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null)
+            {
+                StaticTemp.selectedBook = (Book)dataGrid.SelectedItem;
+                NavigationService.Navigate(new Uri("/Pages/EditBookPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+        }
         private void TakeBook_Click(object sender, RoutedEventArgs e)
         {
             if (dataGrid.SelectedItem != null)
             {
-                StaticTransaction.selectedBook = (Book)dataGrid.SelectedItem;
+                StaticTemp.selectedBook = (Book)dataGrid.SelectedItem;
                 NavigationService.Navigate(new Uri("/Pages/TakeBookPage.xaml", UriKind.RelativeOrAbsolute));
             }
+        }
+        private void returnBook_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null)
+                using (var db = new ArLibCon())
+                {
+                    Book selected = (Book)dataGrid.SelectedItem;
+                    if (selected.czyWypożyczona == true)
+                    {
+                        var transaction = db.Transactions.SingleOrDefault(b => (b.idKsiążki == selected.ID && b.czyZwrócona == false));
+                        var reader = db.Readers.SingleOrDefault(b => b.ID == transaction.idCzytelnika);
+                        var book = db.Books.SingleOrDefault(b => b.ID == selected.ID);
+
+                        transaction.dataZwrotu = DateTime.Today;
+                        transaction.czyZwrócona = true;
+                        reader.limitWypożyczeń += 1;
+                        book.czyWypożyczona = false;
+
+                        db.SaveChanges();
+                        MessageBox.Show("Pomyślnie zwrócono książkę!");
+                        NavigationService.Refresh();
+                    }
+                }
         }
         private void deleteBook_button_Click(object sender, RoutedEventArgs e)
         {
@@ -74,7 +105,6 @@ namespace ArLib.Pages
                         db.SaveChanges();
                         NavigationService.Refresh();
                     }
-            
         }
         private void edit_Click(object sender, RoutedEventArgs e)
         {
@@ -95,6 +125,8 @@ namespace ArLib.Pages
             //TODO: Show "About" page
             NavigationService.Navigate(new Uri("/Pages/AboutPage.xaml", UriKind.RelativeOrAbsolute));
         }
+
+
     }
 }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArLib.Classes
 {
-    public static class StaticTransaction
+    public static class StaticTemp
     {
         public static Book selectedBook { get; set; }
         public static Reader selectedReader { get; set; }

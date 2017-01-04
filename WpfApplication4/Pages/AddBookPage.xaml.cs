@@ -17,7 +17,7 @@ namespace ArLib.Pages
 
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void add_button_Click(object sender, RoutedEventArgs e)

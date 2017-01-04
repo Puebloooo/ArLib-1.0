@@ -76,7 +76,7 @@
     <Compile Include="Classes\ArLibCon.cs" />
     <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\Reader.cs" />
-    <Compile Include="Classes\StaticTransaction.cs" />
+    <Compile Include="Classes\StaticTemp.cs" />
     <Compile Include="Classes\Transaction.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -91,6 +91,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AddReaderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditBookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditReaderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +136,12 @@
     </Compile>
     <Compile Include="Pages\AddReaderPage.xaml.cs">
       <DependentUpon>AddReaderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditBookPage.xaml.cs">
+      <DependentUpon>EditBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditReaderPage.xaml.cs">
+      <DependentUpon>EditReaderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>

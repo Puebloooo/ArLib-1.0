@@ -11,11 +11,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/WpfApplication4;component/Additional/background.png"/>
         </Grid.Background>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="36" FontFamily="DejaVu Serif" TextAlignment="Center" TextDecorations="{x:Null}" Foreground="White"><Run Text="ArLib 1.0 - "/><Run FontSize="25" Text="Wyszukaj..."/><LineBreak/><LineBreak/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="search_textBox" HorizontalAlignment="Left" Height="54" Margin="61,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
-        <Button x:Name="search_button" Content="Wyszukaj..." HorizontalAlignment="Left" Height="54" Margin="643,80,0,0" VerticalAlignment="Top" Width="96" Click="SearchButton_Click" IsDefault="True"/>
-        <DataGrid x:Name="results_books" HorizontalAlignment="Left" Margin="61,164,0,0" VerticalAlignment="Top" Height="128" Width="561"/>
-        <DataGrid x:Name="results_readers" HorizontalAlignment="Left" Margin="61,345,0,0" VerticalAlignment="Top" Height="128" Width="561"/>
-        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Left" Margin="61,507,0,0" VerticalAlignment="Top" Width="116" RenderTransformOrigin="-1.747,0.25" Height="44" Click="back_button_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="36" FontFamily="DejaVu Serif" TextAlignment="Center" TextDecorations="{x:Null}" Foreground="White"><Run Text="ArLib 1.0 - "/><Run FontSize="25" Text="Wypożyczenia"/><LineBreak/><LineBreak/><LineBreak/><Run/></TextBlock>
+        <DataGrid x:Name="results_transactions" HorizontalAlignment="Right" Margin="0,146,43,0" Grid.Row="1" VerticalAlignment="Top" Height="214" Width="698" IsReadOnly="True"/>
+
+        <TextBox x:Name="quicksearch_tb" HorizontalAlignment="Right" Height="36" Margin="0,105,159,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="582" FontFamily="DejaVu Serif Condensed" FontSize="20"/>
+        <Button x:Name="quicksearch_button" Content="Wyszukaj" HorizontalAlignment="Right" Margin="0,105,43,0" Grid.Row="1" VerticalAlignment="Top" Width="111" Height="36" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="QuickSearch_Click"/>
+        <Button x:Name="returnBook_button" Content="Zwróć" HorizontalAlignment="Right" Margin="0,365,228,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" RenderTransformOrigin="0.037,1.933" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="returnBook_Click"/>
+        <Button x:Name="deleteTransaction_button" Content="Usuń" HorizontalAlignment="Right" Margin="0,365,43,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="30" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="deleteTransaction_button_Click"/>
+        <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Right" Margin="0,440,606,0" VerticalAlignment="Top" Width="135" Height="40" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="back_button_Click"/>
     </Grid>
 </Page>

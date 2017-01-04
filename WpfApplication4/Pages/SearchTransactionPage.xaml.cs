@@ -24,25 +24,68 @@ namespace ArLib.Pages
         public SearchTransactionPage()
         {
             InitializeComponent();
-        }
-
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
-        {
             using (var db = new ArLibCon())
             {
-                string tmp = search_textBox.Text;
-
-                var query = from reader in db.Readers
-                            where (reader.ID.ToString().Contains(tmp)|| reader.imię.Contains(tmp) || reader.nazwisko.Contains(tmp) ||  reader.adres.Contains(tmp) || reader.nrTelefonu.Contains(tmp))
-                            select reader;
-
-                results_readers.ItemsSource = query.ToList();
+                results_transactions.ItemsSource = db.Transactions.ToList();
             }
         }
-
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void QuickSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new ArLibCon())
+            {
+                string tmp = quicksearch_tb.Text;
+
+                var query = from transaction in db.Transactions
+                            where (transaction.idWypożyczenia.ToString().Contains(tmp) || transaction.idKsiążki.ToString().Contains(tmp) || transaction.idCzytelnika.ToString().Contains(tmp))
+                            select transaction;
+
+                results_transactions.ItemsSource = query.ToList();
+            }
+        }
+        private void returnBook_Click(object sender, RoutedEventArgs e)
+        {
+            if (results_transactions.SelectedItem != null)
+                using (var db = new ArLibCon())
+                {
+                    Transaction selected = (Transaction)results_transactions.SelectedItem;
+                    var selectedBook = db.Books.SingleOrDefault(b => b.ID == selected.idKsiążki);
+                    if (selectedBook.czyWypożyczona == true)
+                    {
+                        var transaction = db.Transactions.SingleOrDefault(b => (b.idKsiążki == selectedBook.ID && b.czyZwrócona == false));
+                        var reader = db.Readers.SingleOrDefault(b => b.ID == transaction.idCzytelnika);
+                        var book = db.Books.SingleOrDefault(b => b.ID == selectedBook.ID);
+
+                        transaction.dataZwrotu = DateTime.Today;
+                        transaction.czyZwrócona = true;
+                        reader.limitWypożyczeń += 1;
+                        book.czyWypożyczona = false;
+
+                        db.SaveChanges();
+                        MessageBox.Show("Pomyślnie zwrócono książkę!");
+                        NavigationService.Refresh();
+                    }
+                }
+        }
+        private void deleteTransaction_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (results_transactions.SelectedItem != null)
+                if (MessageBox.Show("Czy na pewno usunąć?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    using (var db = new ArLibCon())
+                    {
+                        Transaction tmp = (Transaction)results_transactions.SelectedItem;
+
+                        var query = from transaction in db.Transactions
+                                    where transaction.idWypożyczenia == tmp.idWypożyczenia
+                                    select transaction;
+
+                        db.Transactions.RemoveRange(query);
+                        db.SaveChanges();
+                        NavigationService.Refresh();
+                    }
         }
     }
 }

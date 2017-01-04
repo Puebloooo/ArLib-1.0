@@ -51,27 +51,27 @@ namespace ArLib.Pages
 
         private void transaction_button_Click(object sender, RoutedEventArgs e)
         {
-            StaticTransaction.selectedReader = (Reader)results_readers.SelectedItem;
-            Transaction tmp = new Transaction(StaticTransaction.selectedBook, StaticTransaction.selectedReader);
+            StaticTemp.selectedReader = (Reader)results_readers.SelectedItem;
+            Transaction tmp = new Transaction(StaticTemp.selectedBook, StaticTemp.selectedReader);
 
             using (var db = new ArLibCon())
             {
-                var result = db.Books.SingleOrDefault(b => b.ID == StaticTransaction.selectedBook.ID);
-                var result2 = db.Readers.SingleOrDefault(b => b.ID == StaticTransaction.selectedReader.ID);
+                var result = db.Books.SingleOrDefault(b => b.ID == StaticTemp.selectedBook.ID);
+                var result2 = db.Readers.SingleOrDefault(b => b.ID == StaticTemp.selectedReader.ID);
 
-                if (result != null && result2 != null && StaticTransaction.selectedReader.limitWypożyczeń > 0 && StaticTransaction.selectedBook.czyWypożyczona == false)
+                if (result != null && result2 != null && StaticTemp.selectedReader.limitWypożyczeń > 0 && StaticTemp.selectedBook.czyWypożyczona == false)
                 {
                     result.czyWypożyczona = true;
                     result2.limitWypożyczeń -= 1;
                     db.Transactions.Add(tmp);
 
                     db.SaveChanges();
-
-                    tmp_label.Content = "Pomyślnie dodano! Wciśnij powrót!";
+                    MessageBox.Show("Pomyślnie wypożyczono!");
+                    NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
                 }
-                else if (StaticTransaction.selectedReader.limitWypożyczeń <= 0)
+                else if (StaticTemp.selectedReader.limitWypożyczeń <= 0)
                     tmp_label.Content = "Użytkownik nie może wypożyczyć \nwięcej książek!";
-                else if (StaticTransaction.selectedBook.czyWypożyczona == true)
+                else if (StaticTemp.selectedBook.czyWypożyczona == true)
                     tmp_label.Content = "Książka już została wypożyczona!";
                 else
                     tmp_label.Content = "Nastąpił problem przy wypożyczeniu. \nWciśnij powrót i spróbuj ponownie.";
