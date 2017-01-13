@@ -1,18 +1,8 @@
 ﻿using ArLib.Classes;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ArLib.Pages
 {
@@ -31,7 +21,6 @@ namespace ArLib.Pages
             publisher_box.Text = StaticTemp.selectedBook.wydawnictwo;
             series_box.Text = StaticTemp.selectedBook.seria;
         }
-
         private void edit_button_Click(object sender, RoutedEventArgs e)
         {
             if (title_box.Text != "" && author_box.Text != "" && isbn_box.Text != "" && pages_box.Text != "" && publisher_box.Text != "")

@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Classes\Administrator.cs" />
     <Compile Include="Classes\ArLibCon.cs" />
+    <Compile Include="Classes\ArLibInitializer.cs" />
     <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\Reader.cs" />
     <Compile Include="Classes\StaticTemp.cs" />
@@ -94,6 +95,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ChangeAdminInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EditBookPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +114,14 @@
     <Page Include="Pages\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NewPasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RestorePasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SearchBillPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +150,9 @@
     <Compile Include="Pages\AddReaderPage.xaml.cs">
       <DependentUpon>AddReaderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChangeAdminInfoPage.xaml.cs">
+      <DependentUpon>ChangeAdminInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EditBookPage.xaml.cs">
       <DependentUpon>EditBookPage.xaml</DependentUpon>
     </Compile>
@@ -148,6 +164,12 @@
     </Compile>
     <Compile Include="Pages\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewPasswordPage.xaml.cs">
+      <DependentUpon>NewPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RestorePasswordPage.xaml.cs">
+      <DependentUpon>RestorePasswordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SearchBillPage.xaml.cs">
       <DependentUpon>SearchBillPage.xaml</DependentUpon>

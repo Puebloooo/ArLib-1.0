@@ -29,26 +29,19 @@ namespace ArLib.Pages
                 results_readers.ItemsSource = db.Readers.ToList();
             }
         }
-
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             using (var db = new ArLibCon())
             {
                 string tmp = search_textBox.Text;
-
-                var query = from reader in db.Readers
-                            where (reader.ID.ToString().Contains(tmp)|| reader.imię.Contains(tmp) || reader.nazwisko.Contains(tmp) ||  reader.adres.Contains(tmp) || reader.nrTelefonu.Contains(tmp))
-                            select reader;
-
+                var query = db.Readers.Where(reader => (reader.ID.ToString().Contains(tmp) || reader.imię.Contains(tmp) || reader.nazwisko.Contains(tmp) || reader.adres.Contains(tmp) || reader.nrTelefonu.Contains(tmp)));
                 results_readers.ItemsSource = query.ToList();
             }
         }
-
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
         }
-
         private void transaction_button_Click(object sender, RoutedEventArgs e)
         {
             StaticTemp.selectedReader = (Reader)results_readers.SelectedItem;

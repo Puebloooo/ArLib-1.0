@@ -33,20 +33,18 @@ namespace ArLib.Pages
         }
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Pages/AddBookPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/AddBookPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void AddReader_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Pages/AddReaderPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/AddReaderPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void QuickSearch_Click(object sender, RoutedEventArgs e)
         {
             string tmp = quicksearch_tb.Text;
             using (var db = new ArLibCon())
             {
-                var query = from book in db.Books
-                            where (book.ID.ToString().Contains(tmp) || book.tytuł.Contains(tmp) || book.autor.Contains(tmp) || book.ISBN.Contains(tmp) || book.wydawnictwo.Contains(tmp) || book.seria.Contains(tmp))
-                            select book;
+                var query = db.Books.Where(book => (book.ID.ToString().Contains(tmp) || book.tytuł.Contains(tmp) || book.autor.Contains(tmp) || book.ISBN.Contains(tmp) || book.wydawnictwo.Contains(tmp) || book.seria.Contains(tmp)));
                 dataGrid.ItemsSource = query.ToList();
             }
         }
@@ -97,9 +95,7 @@ namespace ArLib.Pages
                     {
                         Book tmp = (Book)dataGrid.SelectedItem;
 
-                        var query = from book in db.Books
-                                    where book.ID == tmp.ID
-                                    select book;
+                        var query = db.Books.Where(b => b.ID == tmp.ID);
 
                         db.Books.RemoveRange(query);
                         db.SaveChanges();
@@ -108,13 +104,11 @@ namespace ArLib.Pages
         }
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Change admin info
-            this.NavigationService.Navigate(new Uri("/Pages/LoginPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/ChangeAdminInfoPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void edit_password_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Change admin password
-            this.NavigationService.Navigate(new Uri("/Pages/LoginPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/NewPasswordPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void logout_Click(object sender, RoutedEventArgs e)
         {
@@ -122,11 +116,8 @@ namespace ArLib.Pages
         }
         private void about_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Show "About" page
             NavigationService.Navigate(new Uri("/Pages/AboutPage.xaml", UriKind.RelativeOrAbsolute));
         }
-
-
     }
 }
 

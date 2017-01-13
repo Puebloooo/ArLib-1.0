@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using ArLib.Classes;
+using System.Linq;
 
 namespace ArLib.Pages
 {
@@ -14,18 +15,20 @@ namespace ArLib.Pages
         {
             InitializeComponent();
         }
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (login_tb.Text == Administrator.login && password_tb.Password == Administrator.hasło)
-                NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
-            else
-                tmp_label.Content = "Podano błędny login i/lub hasło!";
+            using (var db = new ArLibCon())
+            {
+                var adm = db.Administration.First();
+                if (login_tb.Text == adm.login && password_tb.Password == adm.hasło)
+                    NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+                else
+                    tmp_label.Content = "Podano błędny login i/lub hasło!";
+            }
         }
-
         private void restorePassword_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Page for password restoration
+            NavigationService.Navigate(new Uri("/Pages/RestorePasswordPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

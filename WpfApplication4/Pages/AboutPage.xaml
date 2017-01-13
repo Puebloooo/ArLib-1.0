@@ -13,6 +13,7 @@
         </Grid.Background>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="52,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="36" FontFamily="DejaVu Serif" TextDecorations="{x:Null}" Foreground="White"><Run Text="ArLib 1.0 - "/><Run FontSize="20" Text="System Biblioteczny"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <Button x:Name="back_button" Content="Powrót" HorizontalAlignment="Right" Margin="0,440,606,0" VerticalAlignment="Top" Width="135" Height="40" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="back_button_Click"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="59,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="314" Width="653" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="25"><Run Text="Program przygotowany w ramach projektu semestralnego z przedmiotu: "/><LineBreak/><Run Text="Architektura Oprogramowania"/><LineBreak/><Run/><LineBreak/><Run Text="Autorzy:"/><LineBreak/><Run FontSize="20" Text="Dominika Kawucha"/><LineBreak/><Run FontSize="20" Text="Paweł Kosmala"/><LineBreak/><Run FontSize="20"/><LineBreak/><Run FontSize="22" Text="Wydział Zastosowań Informatyki i Matematyki"/><LineBreak/><Run FontSize="22" Text="Szkoła Główna Gospodarstwa Wiejskiego w Warszawie"/><LineBreak/><Run FontSize="22" Text="Warszawa, "/><Run FontSize="22" Text="2017r. "/><LineBreak/><Run FontSize="20"/></TextBlock>
 
 
     </Grid>

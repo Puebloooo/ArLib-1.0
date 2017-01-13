@@ -61,3 +61,9 @@ C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\EditReaderPage.g.cs
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\EditBookPage.baml
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\EditReaderPage.baml
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\RestorePasswordPage.g.cs
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\RestorePasswordPage.baml
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\NewPasswordPage.g.cs
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\NewPasswordPage.baml
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\ChangeAdminInfoPage.g.cs
+C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\obj\Debug\Pages\ChangeAdminInfoPage.baml

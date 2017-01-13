@@ -25,11 +25,7 @@ namespace ArLib.Pages
             using (var db = new ArLibCon())
             {
                 string tmp = quicksearch_tb.Text;
-
-                var query = from reader in db.Readers
-                            where (reader.ID.ToString().Contains(tmp) || reader.imię.Contains(tmp) || reader.nazwisko.Contains(tmp) || reader.adres.Contains(tmp) || reader.nrTelefonu.Contains(tmp))
-                            select reader;
-
+                var query = db.Readers.Where(reader => (reader.ID.ToString().Contains(tmp) || reader.imię.Contains(tmp) || reader.nazwisko.Contains(tmp) || reader.adres.Contains(tmp) || reader.nrTelefonu.Contains(tmp)));
                 results_readers.ItemsSource = query.ToList();
             }
         }
@@ -40,17 +36,13 @@ namespace ArLib.Pages
                     using (var db = new ArLibCon())
                     {
                         Reader tmp = (Reader)results_readers.SelectedItem;
-
-                        var query = from reader in db.Readers
-                                    where reader.ID == tmp.ID
-                                    select reader;
+                        var query = db.Readers.Where(reader => reader.ID == tmp.ID);
 
                         db.Readers.RemoveRange(query);
                         db.SaveChanges();
                         NavigationService.Refresh();
                     }
         }
-
         private void editReader_button_Click(object sender, RoutedEventArgs e)
         {
             if (results_readers.SelectedItem != null)

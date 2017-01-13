@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\domin\Desktop\Studjes\R3S5\Architektura Oprogramowania\Projekty\Projekt 2\ArLib-1.0\WpfApplication4\App.xaml
-122022936109
+15-485076888
 
-22-1599583769
+26-1912293275
 162029487953
-MainWindow.xaml;Pages\AboutPage.xaml;Pages\AddBookPage.xaml;Pages\AddReaderPage.xaml;Pages\EditBookPage.xaml;Pages\EditReaderPage.xaml;Pages\LoginPage.xaml;Pages\MainView.xaml;Pages\SearchBillPage.xaml;Pages\TakeBookPage.xaml;Pages\SearchTransactionPage.xaml;Pages\SearchReaderPage.xaml;
+MainWindow.xaml;Pages\AboutPage.xaml;Pages\AddBookPage.xaml;Pages\AddReaderPage.xaml;Pages\ChangeAdminInfoPage.xaml;Pages\EditBookPage.xaml;Pages\EditReaderPage.xaml;Pages\LoginPage.xaml;Pages\MainView.xaml;Pages\NewPasswordPage.xaml;Pages\RestorePasswordPage.xaml;Pages\SearchBillPage.xaml;Pages\TakeBookPage.xaml;Pages\SearchTransactionPage.xaml;Pages\SearchReaderPage.xaml;
 
 False
 

@@ -1,18 +1,7 @@
 ﻿using ArLib.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ArLib.Pages
 {
@@ -25,7 +14,6 @@ namespace ArLib.Pages
         {
             InitializeComponent();
         }
-
         private void add_button_Click(object sender, RoutedEventArgs e)
         {
             if (name_box.Text != "" && surname_box.Text != "" && address_box.Text != "" && number_box.Text != "" )
@@ -41,10 +29,9 @@ namespace ArLib.Pages
             else
                 tmp_label.Content = "Uzupełnij wszystkie wymagane pola!";
         }
-
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

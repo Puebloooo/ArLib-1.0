@@ -14,12 +14,10 @@ namespace ArLib.Pages
         {
             InitializeComponent();
         }
-
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
         }
-
         private void add_button_Click(object sender, RoutedEventArgs e)
         {
             if (title_box.Text  != "" && author_box.Text != "" && isbn_box.Text != "" && pages_box.Text != "" && publisher_box.Text != "")
@@ -34,7 +32,6 @@ namespace ArLib.Pages
             }
             else
                 tmp_label.Content = "Uzupełnij wszystkie wymagane pola!";
-
         }
     }
 }

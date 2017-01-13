@@ -38,11 +38,7 @@ namespace ArLib.Pages
             using (var db = new ArLibCon())
             {
                 string tmp = quicksearch_tb.Text;
-
-                var query = from transaction in db.Transactions
-                            where (transaction.idWypożyczenia.ToString().Contains(tmp) || transaction.idKsiążki.ToString().Contains(tmp) || transaction.idCzytelnika.ToString().Contains(tmp))
-                            select transaction;
-
+                var query = db.Transactions.Where(transaction => (transaction.idWypożyczenia.ToString().Contains(tmp) || transaction.idKsiążki.ToString().Contains(tmp) || transaction.idCzytelnika.ToString().Contains(tmp)));
                 results_transactions.ItemsSource = query.ToList();
             }
         }
@@ -77,10 +73,7 @@ namespace ArLib.Pages
                     using (var db = new ArLibCon())
                     {
                         Transaction tmp = (Transaction)results_transactions.SelectedItem;
-
-                        var query = from transaction in db.Transactions
-                                    where transaction.idWypożyczenia == tmp.idWypożyczenia
-                                    select transaction;
+                        var query = db.Transactions.Where(transaction => transaction.idWypożyczenia == tmp.idWypożyczenia);
 
                         db.Transactions.RemoveRange(query);
                         db.SaveChanges();
