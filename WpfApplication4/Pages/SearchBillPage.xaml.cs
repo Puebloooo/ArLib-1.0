@@ -14,21 +14,53 @@ namespace ArLib.Pages
         public SearchBillPage()
         {
             InitializeComponent();
+            using (var db = new ArLibCon())
+            {
+                results_bills.ItemsSource = db.Bills.ToList();
+            }
         }
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        private void QuickSearch_Click(object sender, RoutedEventArgs e)
         {
             using (var db = new ArLibCon())
             {
-                string tmp = search_textBox.Text;
-                
-                //TODO: Bills searching
-                var query = db.Readers.Where(reader => (reader.ID.ToString().Contains(tmp) || reader.imię.Contains(tmp) || reader.nazwisko.Contains(tmp) || reader.adres.Contains(tmp) || reader.nrTelefonu.Contains(tmp)));
-                results_readers.ItemsSource = query.ToList();
+                string tmp = quicksearch_tb.Text;
+
+                var query = db.Bills.Where(Bill => (Bill.idKary.ToString().Contains(tmp) || Bill.wartość.ToString().Contains(tmp) || Bill.idCzytelnika.ToString().Contains(tmp)));
+                results_bills.ItemsSource = query.ToList();
             }
         }
         private void back_button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/MainView.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void deleteBill_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (results_bills.SelectedItem != null)
+                if (MessageBox.Show("Czy na pewno usunąć?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    using (var db = new ArLibCon())
+                    {
+                        Bill tmp = (Bill)results_bills.SelectedItem;
+                        var query = db.Bills.Where(bill => bill.idKary == tmp.idKary);
+
+                        db.Bills.RemoveRange(query);
+                        db.SaveChanges();
+                        NavigationService.Refresh();
+                    }
+        }
+
+        private void payBill_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (results_bills.SelectedItem != null)
+                using (var db = new ArLibCon())
+                {
+                    Bill tmp = (Bill)results_bills.SelectedItem;
+                    var chosen = db.Bills.SingleOrDefault(bill => bill.idKary == tmp.idKary);
+
+                    chosen.czyOpłacona = true;
+                    db.SaveChanges();
+                    NavigationService.Refresh();
+                }
         }
     }
 }

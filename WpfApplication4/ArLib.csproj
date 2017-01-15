@@ -75,6 +75,7 @@
     <Compile Include="Classes\Administrator.cs" />
     <Compile Include="Classes\ArLibCon.cs" />
     <Compile Include="Classes\ArLibInitializer.cs" />
+    <Compile Include="Classes\Bill.cs" />
     <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\Reader.cs" />
     <Compile Include="Classes\StaticTemp.cs" />

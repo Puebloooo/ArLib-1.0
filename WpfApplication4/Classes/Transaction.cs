@@ -10,7 +10,9 @@ namespace ArLib.Classes
         public int idKsiążki { get; set; }
         public int idCzytelnika { get; set; }
         public DateTime dataWypożyczenia { get; set; }
-        public DateTime dataZwrotu { get; set; }
+        public DateTime terminOddania { get; set; }
+        public DateTime? dataZwrotu { get; set; }
+
         public bool czyZwrócona { get; set; }
 
         internal Transaction()
@@ -22,8 +24,8 @@ namespace ArLib.Classes
             idWypożyczenia = GetHashCode();
             idKsiążki = książka.ID;
             idCzytelnika = czytelnik.ID;
-            dataWypożyczenia = DateTime.Today;
-            dataZwrotu = dataWypożyczenia.AddMonths(1);
+            dataWypożyczenia = DateTime.Now;
+            terminOddania = dataWypożyczenia.AddMonths(1);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace ArLib.Pages
         }
         private void SearchBill_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Look through bills
+            NavigationService.Navigate(new Uri("/Pages/SearchBillPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
@@ -75,15 +75,30 @@ namespace ArLib.Pages
                         var transaction = db.Transactions.SingleOrDefault(b => (b.idKsiążki == selected.ID && b.czyZwrócona == false));
                         var reader = db.Readers.SingleOrDefault(b => b.ID == transaction.idCzytelnika);
                         var book = db.Books.SingleOrDefault(b => b.ID == selected.ID);
-
-                        transaction.dataZwrotu = DateTime.Today;
+                        
+                        transaction.dataZwrotu = DateTime.Now;
                         transaction.czyZwrócona = true;
                         reader.limitWypożyczeń += 1;
                         book.czyWypożyczona = false;
+                        book.czyZagubiona = false;
 
                         db.SaveChanges();
+
+                        if (transaction.dataZwrotu > transaction.terminOddania)
+                        {
+                            if (transaction.dataZwrotu.HasValue)
+                            {
+                                double wartośćKary = (transaction.dataZwrotu - transaction.terminOddania).Value.TotalDays * 20;
+                                Bill bill = new Bill(reader.ID, DateTime.Today, wartośćKary);
+                                db.Bills.Add(bill);
+                                db.SaveChanges();
+                                MessageBox.Show("Naliczono karę o wartości: " + wartośćKary);
+                            }
+                        }
                         MessageBox.Show("Pomyślnie zwrócono książkę!");
                         NavigationService.Refresh();
+
+
                     }
                 }
         }

@@ -17,7 +17,7 @@
             <MenuItem Header="Przeglądaj..." FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,50,0" Foreground="White">
                 <MenuItem Header="Czytelników" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchReader_Click" Foreground="Black"/>
                 <MenuItem Header="Wypożyczenia" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchTransaction_Click" Foreground="Black"/>
-                <MenuItem Header="Mandaty" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchBill_Click" Foreground="Black" IsEnabled="False"/>
+                <MenuItem Header="Mandaty" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="SearchBill_Click" Foreground="Black"/>
             </MenuItem>
             <MenuItem Header="Książki" FontFamily="DejaVu Serif Condensed" FontSize="25" Margin="0,0,50,0" Foreground="White">
                 <MenuItem Header="Dodaj Książkę" FontFamily="DejaVu Serif Condensed" FontSize="20" Click="AddBook_Click" Foreground="Black"/>
